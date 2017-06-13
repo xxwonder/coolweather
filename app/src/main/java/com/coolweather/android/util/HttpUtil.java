@@ -5,6 +5,5 @@ package com.coolweather.android.util;
  */
 public class HttpUtil {
     public static void sendOkHttpRequest(String address,okhttp3.Callback callback){
-        OkHttp
     }
 }
