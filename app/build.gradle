@@ -33,4 +33,5 @@ dependencies {
     //    compile 'com.google.code.gson:gson:2.2.4'
     //    compile 'com.squareup.okhttp:okhttp:2.0.0'
     compile files('libs/litepal-1.5.1.jar')
+    compile files('libs/okio-1.13.0.jar')
 }

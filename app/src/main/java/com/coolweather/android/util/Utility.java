@@ -1,15 +1,15 @@
 package com.coolweather.android.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.coolweather.android.db.City;
-import com.coolweather.android.db.Conty;
+import com.coolweather.android.db.County;
 import com.coolweather.android.db.Province;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 /**
  * Created by yjj on 2017/6/14.
@@ -31,6 +31,7 @@ import org.w3c.dom.Text;
                     province.setProvinceName(provinceObject.getString("name"));
                     province.setProvinceCode(provinceObject.getInt("id"));
                     province.save();
+                    Log.d("tag","save");
                 }
                 return  true;
             } catch (JSONException e) {
@@ -76,7 +77,7 @@ import org.w3c.dom.Text;
                 for(int i=0;i<allConties.length();i++)
                 {
                     JSONObject contyObject = allConties.getJSONObject(i);
-                    Conty conty = new Conty();
+                    County conty = new County();
                     conty.setContyName(contyObject.getString("name"));
                     conty.setWeatherId(contyObject.getString("weather_id"));
                     conty.setCityId(cityId);
