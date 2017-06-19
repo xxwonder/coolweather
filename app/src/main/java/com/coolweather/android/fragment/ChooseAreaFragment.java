@@ -139,7 +139,7 @@ public class ChooseAreaFragment extends Fragment {
         provinceList = DataSupport.findAll(Province.class);
         if(provinceList.size()>0)
         {
-            Toast.makeText(getContext(),"这历史省"+dataList.size(),Toast.LENGTH_LONG).show();
+//            Toast.makeText(getContext(),"这历史省"+dataList.size(),Toast.LENGTH_LONG).show();
             dataList.clear();
             for(Province province :provinceList)
             {
@@ -150,7 +150,7 @@ public class ChooseAreaFragment extends Fragment {
             currentLevel = LEVEL_PROVINCE;
         }else{
             String address = "http://guolin.tech/api/china";
-
+//
             queryFromServer(address,"province");
         }
     }
@@ -228,8 +228,8 @@ public class ChooseAreaFragment extends Fragment {
                 {
                     // Toast.makeText(getContext(),"tyyyyy",Toast.LENGTH_LONG).show();
                     Log.d("tag",1111+"");
-                    Toast.makeText(getContext(),"这历史省1111",Toast.LENGTH_LONG).show();
                     result = Utility.handleProvinceResponse(responseText);
+                    Toast.makeText(getContext(),"这历史省1111"+result+"",Toast.LENGTH_LONG).show();
                 }else if("city".equals(type)){
                     result = Utility.handleCityResponse(responseText,selectedProvince.getId());
                 }else if ("county".equals(type))
