@@ -94,7 +94,7 @@ public class ChooseAreaFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(),"12345",Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(),"12345",Toast.LENGTH_LONG).show();
                 if(currentLevel == LEVEL_PROVINCE)
                 {
                     selectedProvince = provinceList.get(position);
@@ -128,12 +128,12 @@ public class ChooseAreaFragment extends Fragment {
             public void onClick(View v) {
                 if(currentLevel == LEVEL_COUNTY)
                 {
-                    Toast.makeText(getContext(),"这里是城市了",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(),"这里是城市了",Toast.LENGTH_LONG).show();
 
                     queryCities();
                 }else if(currentLevel == LEVEL_CITY)
                 {
-                    Toast.makeText(getContext(),"这历史省",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(),"这历史省",Toast.LENGTH_LONG).show();
 
                     queryProvinces();
                 }
@@ -239,9 +239,9 @@ public class ChooseAreaFragment extends Fragment {
                 if("province".equals(type))
                 {
                     // Toast.makeText(getContext(),"tyyyyy",Toast.LENGTH_LONG).show();
-                    Log.d("tag",1111+"");
+//                    Log.d("tag",1111+"");
                     result = Utility.handleProvinceResponse(responseText);
-                    Toast.makeText(getContext(),"这历史省1111"+result+"",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(getContext(),"这历史省1111"+result+"",Toast.LENGTH_LONG).show();
                 }else if("city".equals(type)){
                     result = Utility.handleCityResponse(responseText,selectedProvince.getId());
                 }else if ("county".equals(type))
@@ -250,19 +250,19 @@ public class ChooseAreaFragment extends Fragment {
                 }
                 if(result)
                 {
-                    Log.d("tag","222");
+//                    Log.d("tag","222");
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Log.d("tag","close前");
+//                            Log.d("tag","close前");
                             closeProgressDialog();
-                            Log.d("tag","close后");
+//                            Log.d("tag","close后");
                             if("province".equals(type))
                             {
-                                Log.d("tag","query前");
+//                                Log.d("tag","query前");
 
                                 queryProvinces();
-                                Log.d("tag","query后");
+//                                Log.d("tag","query后");
                             }else if("city".equals(type))
                             {
                                 queryCities();
